@@ -1,11 +1,8 @@
 
-.. code-block::
+.. code-block:: python
 
-   @interval_decorator.interval(1)
-   def my_method(count):
-       print("Pass interval")
-       count += 1
-       return count
-
-```
-    m2r README.md --overwrite
+       @interval_decorator.interval(1)
+       def my_method(count):
+           print("Pass interval")
+           count += 1
+           return count
