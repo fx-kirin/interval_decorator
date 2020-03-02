@@ -8,8 +8,8 @@ def my_method(count):
     return count
 
 
-@interval_decorator.interval_or_return_first_value(1)
-def my_method_or_return_first_value(count):
+@interval_decorator.interval_or_return_last_value(1)
+def my_method_or_return_last_value(count):
     print("Pass interval")
     updated_count = count + 1
     return updated_count
@@ -17,6 +17,6 @@ def my_method_or_return_first_value(count):
 
 assert my_method(10) == 11
 assert my_method(10) == None
-assert my_method_or_return_first_value(12) == 13
-assert my_method_or_return_first_value(12) == 12
+assert my_method_or_return_last_value(12) == 13
+assert my_method_or_return_last_value(12) == 12
 ```

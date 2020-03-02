@@ -1,4 +1,4 @@
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 import time
 
 
@@ -20,7 +20,7 @@ def interval(time_interval, alternative_func=None):
     return decorator
 
 
-def interval_or_return_first_value(time_interval):
+def interval_or_return_last_value(time_interval):
     def decorator(function):
         function.__last_run = 0
 
@@ -30,7 +30,7 @@ def interval_or_return_first_value(time_interval):
                 function.__last_run = now
                 return function(*args, **kwargs)
             else:
-                return args[0]
+                return args[-1]
 
         return guard
 
